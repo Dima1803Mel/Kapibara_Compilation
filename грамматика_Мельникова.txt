@@ -1,0 +1,22 @@
+<program> ::= <program-name> <declarations> BEGIN <stmt-list> END.
+<program-name> ::= PROGRAM <id>; | NULL
+<declarations> ::= <declaration> | <declaration> <declarations> | NULL
+<declaration> ::= <const-dec> | <var-dec> | <proc>
+<const-dec> ::= CONST <const-list> | NULL
+<const-list> ::= <const>; | <const>; <const-list>
+<operator_if> ::= if <log_expression> then begin <operators> end [else <operators>];
+<log_expression> ::= <operator> =|<|>|<=|>=|<> <operator> | (<operator> =|<|>|<=|>=|<> <operator>) or | and (<operator> =|<|>|<=|>=|<> <operator>)
+<declaration_array> ::= {var <operator> : } array [<integer> .. <integer>] of <data_type>
+<array> ::= <operator>[<integer>]
+<data_type> ::= <integer>
+<for_loop> ::= for <expression> do <operators> | begin <operators> end;
+<expression> ::= <integer>:= <integer> to | downto <integer>
+<operators> ::= <operator> [{; <operator>}]
+<operator> ::= <variable>
+<declaration_variable> ::= <variable> := <value> | <arithmetic_expression> | <variable>
+<arithmetic_expression> ::= <value> | <variable> + | - | * | / <value> | <variable>
+<variable> ::= <string>
+<value> ::= <integer>
+<string> ::= <char> [{<char>}]
+<char> ::= "A" | "B" ... "Z" | "a" | "b" | ... "z"
+<integer> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
